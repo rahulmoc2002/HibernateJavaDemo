@@ -4,6 +4,7 @@ package org.example;
 import jakarta.persistence.Entity;
 
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Department {
@@ -15,9 +16,18 @@ public class Department {
         this.dept_Id = dept_Id;
     }
 
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
     @Id
     public int dept_Id;
-
+    @ManyToOne
+    public Student student;
     public String getDept_Name() {
         return dept_Name;
     }
@@ -39,12 +49,13 @@ public class Department {
         this.dept_Code = dept_Code;
     }
 
-    @Override
-    public String toString() {
-        return "Department{" +
-                "dept_Id=" + dept_Id +
-                ", dept_Name='" + dept_Name + '\'' +
-                ", dept_Code='" + dept_Code + '\'' +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Department{" +
+//                "dept_Id=" + dept_Id +
+//                ", student=" + student +
+//                ", dept_Name='" + dept_Name + '\'' +
+//                ", dept_Code='" + dept_Code + '\'' +
+//                '}';
+//    }
 }

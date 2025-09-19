@@ -2,20 +2,22 @@ package org.example;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Student {
     @Id
     private  int rollId;
-    @OneToOne
+    @OneToMany(mappedBy = "student")
+    public List<Department> departments;
 
-    public Department department;
 
-    public Department getDepartment() {
-        return department;
+    public List<Department> getDepartments() {
+        return departments;
     }
 
-    public void setDepartment(Department department) {
-        this.department = department;
+    public void setDepartments(List<Department> departments) {
+        this.departments = departments;
     }
 
     public int getRollId() {
@@ -46,15 +48,15 @@ public class Student {
 
     private  String sName;
 
-    @Override
-    public String toString() {
-        return "Student{" +
-                "rollId=" + rollId +
-                ", department=" + department +
-                ", sName='" + sName + '\'' +
-                ", age=" + age +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Student{" +
+//                "rollId=" + rollId +
+//                ", departments=" + departments +
+//                ", sName='" + sName + '\'' +
+//                ", age=" + age +
+//                '}';
+//    }
 
     private  int age;
 
