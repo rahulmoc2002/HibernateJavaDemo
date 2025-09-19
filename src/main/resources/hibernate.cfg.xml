@@ -22,7 +22,7 @@
         <property name="hibernate.format_sql">true</property>
 
         <!-- Automatically create/drop tables -->
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
 
         <!-- Mapping files or annotated classes -->
         <!-- Example: <mapping class="com.example.model.MyEntity"/> -->
